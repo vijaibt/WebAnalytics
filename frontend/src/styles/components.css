@@ -1,0 +1,84 @@
+/* General component styles */
+.component-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Loading indicator */
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Chart container */
+  .chart-container {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  /* Metrics cards */
+  .metrics-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .metric-card {
+    flex: 1;
+    min-width: 200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .metric-value {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 8px 0;
+  }
+  
+  .metric-label {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* Tables */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .data-table th {
+    font-weight: 600;
+    background-color: #f9f9f9;
+  }
+  
+  /* Progress bars */
+  .progress-bar {
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    background-color: #6366f1;
+  }
