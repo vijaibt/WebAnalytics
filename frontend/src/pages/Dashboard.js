@@ -1,3 +1,4 @@
+// src/pages/Dashboard.js
 import React, { useState } from 'react';
 import VisitorsChart from '../components/charts/VisitorsChart';
 import UserMetricsCards from '../components/dashboard/UserMetricsCards';
@@ -32,6 +33,7 @@ const Dashboard = () => {
       <section className="dashboard-section">
         <h2>User Metrics</h2>
         <UserMetricsCards timeRange={timeRange} />
+        <h3>Daily Active Users</h3>
         <VisitorsChart timeRange={timeRange} />
       </section>
       
@@ -59,6 +61,10 @@ const Dashboard = () => {
       <section className="dashboard-section">
         <h2>Page Metrics</h2>
         <PageMetrics timeRange={timeRange} />
+      </section>
+      
+      <section className="dashboard-section">
+        <h3>Pages Performance</h3>
         <PagesPerformanceTable timeRange={timeRange} />
       </section>
     </div>

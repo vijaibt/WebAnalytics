@@ -1,44 +1,52 @@
-// In src/services/analyticsService.js
+// src/services/analyticsService.js
 import api from './api';
 
 const analyticsService = {
   // User metrics
-  getDailyActiveUsers: (days = 30) => {
+  getDailyActiveUsers: (days = 7) => {
     return api.get(`analytics/daily/?days=${days}`);
   },
   
+  getUniqueUsers: (days = 7) => {
+    return api.get(`analytics/daily/?distinct=user_id&days=${days}`);
+  },
+  
   getNewUsers: (days = 7) => {
-    return api.get(`analytics/daily/?event_name=pageview&days=${days}`);
+    return api.get(`analytics/daily/?new=true&days=${days}`);
   },
   
   // Geography data
-  getPageViewsByCountry: () => {
-    return api.get('analytics/countries/');
+  getPageViewsByCountry: (days = 7) => {
+    return api.get(`analytics/countries/?days=${days}`);
   },
   
   // Platform data
-  getPlatformData: () => {
-    return api.get('analytics/top-pages/'); // You might need to create this endpoint
+  getPlatformData: (days = 7) => {
+    return api.get(`analytics/platforms/?days=${days}`);
   },
   
   // Session metrics
-  getSessionMetrics: (days = 30) => {
-    return api.get(`events/?event_name=pageview&days=${days}`);
+  getSessionMetrics: (days = 7) => {
+    return api.get(`analytics/sessions/?days=${days}`);
   },
   
   // Traffic sources
-  getTrafficSources: () => {
-    return api.get('analytics/daily/');
+  getTrafficSources: (days = 7) => {
+    return api.get(`analytics/sources/?days=${days}`);
   },
   
   // Page metrics
-  getPageMetrics: () => {
-    return api.get('analytics/top-pages/');
+  getPageViews: (days = 7) => {
+    return api.get(`analytics/pages/?days=${days}`);
   },
   
-  // Pages performance
-  getPagesPerformance: () => {
-    return api.get('analytics/top-pages/');
+  getTopPages: (days = 7, limit = 10) => {
+    return api.get(`analytics/top-pages/?days=${days}&limit=${limit}`);
+  },
+  
+  // Raw events
+  getEvents: (params = {}) => {
+    return api.get('events/', { params });
   }
 };
 

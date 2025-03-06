@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 150px;
     font-size: 16px;
     color: #666;
   }
@@ -21,6 +21,7 @@
   .chart-container {
     width: 100%;
     margin-bottom: 24px;
+    min-height: 300px;
   }
   
   /* Metrics cards */
@@ -53,6 +54,10 @@
   }
   
   /* Tables */
+  .table-container {
+    overflow-x: auto;
+  }
+  
   .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -71,7 +76,14 @@
   }
   
   /* Progress bars */
+  .progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
   .progress-bar {
+    flex: 1;
     height: 8px;
     background-color: #e0e0e0;
     border-radius: 4px;
@@ -81,4 +93,48 @@
   .progress-bar-fill {
     height: 100%;
     background-color: #6366f1;
+  }
+
+  /* Add these to your existing styles in src/styles/components.css */
+
+.page-metrics-container {
+    margin-bottom: 24px;
+  }
+  
+  .table-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .data-table th {
+    background-color: #f5f7fb;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+  }
+  
+  .data-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .data-table tr:hover {
+    background-color: #f8fafc;
   }

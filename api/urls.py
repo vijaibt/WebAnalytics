@@ -13,6 +13,10 @@ urlpatterns = [
     path('analytics/daily/', views.event_count_by_day, name='daily-events'),
     path('analytics/countries/', views.page_views_by_country, name='country-views'),
     path('analytics/top-pages/', views.top_pages, name='top-pages'),
+    # Add these to your api/urls.py file
+    path('analytics/sources/', views.traffic_sources, name='traffic-sources'),
+    path('analytics/pages/', views.page_metrics, name='page-metrics'),
+    path('analytics/top-pages/', views.top_pages, name='top-pages'),            
     
     # Tracking endpoint
     path('track/', views.track_event, name='track-event'),
